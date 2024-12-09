@@ -4,7 +4,6 @@ int main()
 {
     int num=12345;
     int ten_digits,hundred_digits,unit_digit,temp,after,thousand_digits,ten_thousand_digits;
-    int n [1000000];
     if(num<=1000)
     {
         if(num/100>0)
