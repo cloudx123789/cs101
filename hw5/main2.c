@@ -3,17 +3,20 @@
 
 int main()
 {
-    double n=1.0;
-    double pi=0.0;
-    for(int i=1; i<=10; i++)
+    float n =1.0;
+    double p =0.0;
+    int i =0;
+    float t=0.000001; 
+
+    while (fabs(p-3.14159)>t)
     {
-        pi=pi+(4.0/n*(pow((-1),i-1)));
+        p=p+(4.0/n*pow(-1, i));
         n=n+2;
+        i=i+1;
     }
-    printf("%.5f",pi);
+
+    printf("times:%d\n",i);
+    printf("Pi:%.5f\n",p);
+    return 0;
 }
 
-
-
-
-not correct
