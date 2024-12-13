@@ -2,25 +2,42 @@
 
 int main()
 {
-    int n=1;
-    int i=1;
-    for(int t=1; t<=10; t++)
+    int j=1;
+    for(int i=1; i<=9;)
     {
-        if(t<10)
+        printf("%d*%d=%d\t",i ,j ,i*j);
+        j=j+1;
+        if (j>9) 
         {
-            printf("%d*%d=%d ",i,n,i*n);
-            n=n+1;
-        }
-        else if (i==9)
-        {
-            break;
-        }
-        else if(t==10)
-        {
+            i++;
+            j=1;
             printf("\n");
-            t=0;
-            n=1;
-            i=i+1;
         }
     }
 }
+
+
+
+#include <iostream>
+
+int main()
+{
+    int j=1;
+    for(int i=1; i<=10; i++)
+    {
+        if(i<=9)
+        {
+            printf("%d*%d=%d\t",j,i,i*j);
+        }
+        else if(j==9)
+        {
+            break;
+        }
+        else if(i==10)
+        {
+            i=0;
+            j=j+1;
+            printf("\n");
+        }
+    }
+} 
