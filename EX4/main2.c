@@ -1,25 +1,30 @@
 #include <stdio.h>
-#include <math.h>
 
-int main()
+int main() 
 {
-    int n =1;
-    double p =0.0;
-    int i =0;
-
-    while(i<1000000)
+    int flag=1;
+    long long int ipi=0;
+    int n=1;
+    double pi=0;
+    for(int i=1; i<1000000; i++)
     {
-        p=p+(4.0/n*pow(-1, i));
-        n=n+2;
-        i=i+1;
-        long int ip=p*100000;
-        if(ip==314159)
+        ipi=pi*100000;
+        if(ipi==314159)
         {
-            break;   
+            break;
+        }
+        else if(flag==1)
+        {
+            pi=pi+(4.0/n);
+            n=n+2;
+            flag=0;
+        }
+        else if(flag==0)
+        {
+            pi=pi-(4.0/n);
+            n=n+2;
+            flag=1;
         }
     }
-
-    printf("times:%d\n",n);
-    printf("Pi:%.5f\n",p);
-    return 0;
+    printf("%d",n);
 }
