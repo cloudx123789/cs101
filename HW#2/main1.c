@@ -15,7 +15,7 @@ int main()
         int use[70]={0};
         for(int j=0; j<7; )
         {
-            temp=(rand()%69)+1;   //rand()%(R-L+1)+L
+            temp=rand()%69+1;   //rand()%(R-L+1)+L
             if(use[temp]==0)
             {
                 num[i][j]=temp;
