@@ -8,22 +8,21 @@ int main()
     int n;
     scanf("%d",&n);
     int num[n][7];
-    int count=0;
-    int use[70];
     int temp=0;
     srand(1);
-    while(count<n)
+    for(int i=0; i<n; i++)
     {
-        for(int i=0; i<7; )
+        int use[70]={0};
+        for(int j=0; j<7; )
         {
-            temp=rand()% 69 +1;   //rand()%(R-L+1)+L
-            if(!use[temp])
+            temp=(rand()%69)+1;   //rand()%(R-L+1)+L
+            if(use[temp]==0)
             {
-                num[count][i++]=temp;
+                num[i][j]=temp;
                 use[temp]=1;
+                j++;
             }
         }
-        count++;
         printf("\n");
     }
     
@@ -53,3 +52,23 @@ int main()
     
     fclose(fp);
 }
+
+
+
+
+Description
+
+設計一個演算法，輸入一個數字 N，產生 N 組七個不重複數字的樂透號碼，並輸出到「lotto.txt」。
+
+數字 N 範圍 1-5
+樂透號碼是每組七個不重複的數字，範圍 1-69，不用排序
+使用隨機函數 srand(1)
+
+Input (From File: scanf)
+
+使用 scanf() 函式接收輸入。
+
+
+Output (To File: lotto.txt)
+
+使用 fprintf() 函式輸出運算結果到「lotto.txt」
