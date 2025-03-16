@@ -42,7 +42,7 @@ int main()
             } 
             else
             {
-                fprintf(fp, " %02d", num[c][b]);
+                fprintf(fp, " %02d", num[a][b]);
             }
         }
         c++;
