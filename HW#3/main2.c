@@ -7,8 +7,7 @@ void replace_all(char* str, char oldChar, char newChar)
     {
         if(*ptr==oldChar)
         {
-            *ptr=newChar;
-            
+            *ptr=newChar; 
         }
         ptr++;
     }
