@@ -23,7 +23,6 @@ int main()
                 j++;
             }
         }
-        printf("\n");
     }
     
     FILE*fp = fopen("lotto.txt", "w+");
