@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class decoder
+{
+    private:
+    string input;
+    
+    public:
+    decoder(string in)
+    {
+        input=in;
+    }
+    
+    string get_decode()
+    {
+        string part;
+        string ans;
+        for(int i=0; i<input.size(); i++)
+        {
+            if(input[i]-'0'<=9)
+            {
+                for(int j=0; j<input[i]-'0'; j++)
+                {
+                    ans=ans+part;
+                }
+                part.clear();
+            }
+            else
+            {
+                part=part+input[i];
+            }
+        }
+        return ans;
+    }
+};
+
+int main() 
+{
+    decoder d("A2BB2MTMYMU3");
+    cout << d.get_decode() << endl;
+    return 0;
+}
+
+輸入是一個壓縮過的字串，例如 "A2BB2CCC2"
+規則是：
+
+若字母後面跟著數字，表示那個字母要重複那個次數。
+
+如果沒有跟數字，就表示只出現一次。
+
+最終應輸出：AABBBBCCCCCC
