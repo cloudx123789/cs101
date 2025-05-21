@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Bin2todec
+{
+    private:
+    string binary;
+    
+    public:
+    Bin2todec(string input)
+    {
+        binary=input;
+    }
+    
+    int transform()
+    {
+        int sum=0;
+        for(int i=0; i<binary.size(); i++)
+        {
+            sum=sum+(binary[i]-'0')*pow(2,binary.size()-1-i);
+            //sum += (binary[i] - '0') * (1 << (binary.size() - 1 - i));
+        }
+        return sum;
+    }
+};
+
+int main()
+{
+   Bin2todec gh("1111");
+   cout<<gh.transform();
+}
+
+
+P#2：Bin2Decimal 類別的 to_decimal() 函數
+題目需求：
+
+實作 Bin2Decimal 類別
+
+函數 to_decimal(string) 接收最多 4 bits 的二進位字串，轉為十進位整數。
+
