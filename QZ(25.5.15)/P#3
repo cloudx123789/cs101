@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class mystring
+{
+    protected:
+    string read;
+    vector <string> record;
+    string words;
+    string sentence;
+};
+
+class readclass : public mystring
+{
+    private:
+    ifstream in;
+    int num=0;
+    
+    public:
+    void showcase()
+    {   
+        in.open("main.cpp");
+        while(getline(in, read))
+        {
+            stringstream ss(read);
+            while(ss>>words)
+            {
+                if(words=="class")
+                {
+                    ss>>sentence;
+                    record.push_back("class "+sentence);
+                    num++;
+                }
+            }
+        }
+        cout<<num<<" in main.cpp"<<endl;
+        for(auto& out :record)
+        {
+            cout<<out<<endl;
+        }
+    }
+};
+
+int main()
+{
+    readclass rfile;
+    rfile.showcase();
+}
+
+P#3 [using C++]
+讀取檔案(main.cpp)
+判斷此檔案內有幾個 class
+輸出 class name
+output:
+2 class in main.cpp
+class myString
+class ReadClass
