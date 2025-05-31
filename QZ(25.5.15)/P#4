@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Clock
+{
+    protected:
+    int hour;
+    int minute;
+    int second;
+    string dn;
+    
+    public:
+    Clock(int a, int b, int c, string d)
+    {
+        hour=a;
+        minute=b;
+        second=c;
+        dn=d;
+    }
+    
+    void display()
+    {
+        cout<<hour<<":"<<minute<<":"<<second<<":"<<dn<<endl;
+    }
+};
+
+class AClock : public Clock
+{
+    public:
+    AClock(int a, int b, int c, string d) : Clock(a, b, c, d){}
+    void display()
+    {
+        (dn=="AM")? hour=hour : hour+=12;
+        cout<<hour<<"點"<<minute<<"分"<<second<<"秒"<<endl;
+    }
+};
+
+int main()
+{
+    Clock c1(10,45,44,"PM");
+    c1.display();
+    AClock c2(10,36,27,"PM");
+    c2.display();
+}
