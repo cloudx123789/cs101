@@ -38,3 +38,35 @@ P#2：Bin2Decimal 類別的 to_decimal() 函數
 
 函數 to_decimal(string) 接收最多 4 bits 的二進位字串，轉為十進位整數。
 
+
+///for 用遍歷的寫法///
+#include<bits/stdc++.h>
+using namespace std;
+class Bin2Decimal
+{
+    private:
+    string binary;
+    int ans=0;
+    
+    public:
+    Bin2Decimal(string in)
+    {
+        binary=in;
+    }
+    void todecimal()
+    {
+        static int i=binary.length();
+        for(auto zeon : binary)
+        {
+            ans=ans+(zeon-'0')*pow(2,i-1);
+            i--;
+        }
+        cout<<ans<<endl;
+    }
+};
+
+int main()
+{
+    Bin2Decimal d("1001");
+    d.todecimal();
+}
