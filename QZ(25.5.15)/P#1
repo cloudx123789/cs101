@@ -50,3 +50,47 @@ int main()
 如果沒有跟數字，就表示只出現一次。
 
 最終應輸出：AABBBBCCCCCC
+
+
+
+///for用遍歷///
+#include<bits/stdc++.h>
+using namespace std;
+class decoder
+{
+    private:
+    string code;
+    
+    public:
+    decoder(string in)
+    {
+        code=in;
+    }
+    void getdecode()
+    {
+        string part;
+        string ans;
+        for(auto& getan : code)
+        {
+            if(getan-'0'<=9&&getan-'0'>=1)
+            {
+                for(int i=0; i<getan-'0'; i++)
+                {
+                    ans=ans+part;
+                }
+                part.clear();
+            }   
+            else
+            {
+                part=part+getan;
+            }
+        }
+        cout<<ans<<endl;
+    }    
+};
+
+int main()
+{
+    decoder d("A2BR3");
+    d.getdecode();
+}
