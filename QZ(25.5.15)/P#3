@@ -52,7 +52,7 @@ P#3 [using C++]
 讀取檔案(main.cpp)
 判斷此檔案內有幾個 class
 輸出 class name
-output:
+output :
 2 class in main.cpp
 class myString
 class ReadClass
