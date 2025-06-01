@@ -38,6 +38,7 @@ class readclass : public mystring
         {
             cout<<out<<endl;
         }
+        in.close();
     }
 };
 
